@@ -15,11 +15,7 @@ lock = asyncio.Lock()
 @Client.on_message(filters.command("start"))
 async def start_message(bot, message):
     btn = [[
-            InlineKeyboardButton("About", callback_data="about"),
-            InlineKeyboardButton("Souce Code", callback_data="source")
-        ],[
-            InlineKeyboardButton("Close", callback_data="close"),
-            InlineKeyboardButton("Help", callback_data="help")
+            InlineKeyboardButton("Close", callback_data="close")
         ]]
     await message.reply_text(
         text=scripts.START_TXT.format(message.from_user.mention, temp_utils.USER_NAME, temp_utils.BOT_NAME),
